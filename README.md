@@ -1,7 +1,17 @@
 # Deploying Vite App to GitHub Pages
 
-Go to your vite.config.js file. And add your base url to it.
+_npm 6_
+```
+npm create vite@latest my-vue-app --template vue
+```
 
+_npm 7_
+```
+npm create vite@latest my-vue-app -- --template vue
+```
+
+_vite.config.js (add base property)_
+_To be more precise, your base url will be /repo-name/._
 ```
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
@@ -12,12 +22,10 @@ export default defineConfig({
 })
 ```
 
-_To be more precise, your base url will be /repo-name/._
-
 $ npm run build
+
 $ git add dist -f
 
-
-$ git commit -m "Adding dist"
+$ git commit -m 'Add dist'
 
 $ git subtree push --prefix dist origin gh-pages
